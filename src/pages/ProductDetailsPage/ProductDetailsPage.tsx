@@ -16,7 +16,6 @@ import { addFav, removeFav } from '../../features/favorites';
 import { addCart } from '../../features/cart';
 import { NotFoundProduct } from '../NotFoundProduct';
 import { Loader } from '../../components/Loader';
-import React from 'react';
 
 export const ProductDetailsPage: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState('');

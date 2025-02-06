@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import { useDispatch } from 'react-redux';
 import { useAppSelector } from '../../app/hooks';
 import { addCart } from '../../features/cart';
-import React from 'react';
 
 type Props = {
   productId: string;

@@ -13,7 +13,6 @@ import store from './app/store';
 import { ShoppingCartPage } from './pages/ShoppingCart';
 import { MenuPage } from './pages/MenuPage';
 import { NotFoundProduct } from './pages/NotFoundProduct';
-import React from 'react';
 
 export const Root = () => (
   <Provider store={store}>
