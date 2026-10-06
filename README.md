@@ -1,55 +1,49 @@
-[DEMO LINK](https://daniilbarilotti.github.io/phone-catalog/)
+# Phone Catalog
 
-Phone Catalog Project
+A React and TypeScript storefront frontend for phones, tablets and accessories.
 
-This project is a responsive web application that serves as an online store for phones, tablets, and accessories. It offers a modern design, clean code structure, and is optimized for performance and responsiveness.
+[Live demo](https://daniilbarilotti.github.io/phone-catalog/) · [Portfolio](https://daniilbarilotti.github.io/Portfolio/)
 
-Technologies Used
+## What to try
 
-React: Utilized for building the user interface with reusable components, ensuring efficient rendering and a dynamic user experience.
+1. Open a category and change sorting and page size.
+2. Open a product, inspect its capacity and colour variants.
+3. Add products to the cart and favourites, then reload the page.
 
-TypeScript: Employed for static typing, enhancing code quality, maintainability, and developer productivity.
+## Features
 
-SCSS (Sass): Used for styling the application, allowing for modular and maintainable CSS with features like variables, nesting, and mixins.
+- Product categories and detail pages with variant selection.
+- URL-based sorting and pagination.
+- Cart quantities and favourites persisted in localStorage.
+- Reusable product cards and responsive SCSS layouts.
 
-Features
+## Stack and structure
 
-Product Catalog: Browse through a comprehensive catalog of phones, tablets, and accessories, each with detailed information and images.
+React · TypeScript · Redux Toolkit · React Router · SCSS · Create React App.
 
-Shopping Cart: Add products to the cart with quantities saved in local storage, ensuring persistence across sessions.
+| Directory | Responsibility |
+| --- | --- |
+| `src/pages/` | Category, product detail, cart and favourites screens |
+| `src/components/` | Reusable presentation components |
+| `src/features/` | Redux slices for products, cart and favourites |
+| `src/services/` | Product-data requests and helper functions |
+| `public/api/` | Static JSON product catalogue |
 
-Favorites: Mark products as favorites, with selections saved in local storage for easy access.
+## Run locally
 
-Filtering and Sorting: Filter products by price, newness, and alphabetically. Search queries and filters are saved in URL parameters, enabling easy sharing of specific views.
+```bash
+git clone https://github.com/DaniilBarilotti/phone-catalog.git
+cd phone-catalog
+npm ci
+npm start
+```
 
-Product Details: Access detailed information about each product, including specifications and customization options like capacity and color.
+`npm run build` creates the production build. This project uses an older Create React App toolchain; dependency installation and builds should be checked in the intended Node environment before deployment.
 
-Responsive Design: The application is fully responsive, ensuring a seamless experience across various devices and screen sizes.
+## Scope
 
-Custom 404 Page: Displays a user-friendly 'Not Found' page for undefined routes or incorrect URLs.
+Learning / portfolio frontend, not a live shop. Product data comes from static JSON; there is no payment processing, authentication, order fulfilment or custom backend. Browser storage is device-specific.
 
-Project Setup and Running Locally
+## Engineering discussion
 
-Prerequisites
-
-Before running the project locally, ensure you have the following tools installed:
-
-Node.js: Download and install Node.js from here.
-
-npm: This comes bundled with Node.js, but you can also install it separately if needed.
-
-Steps to Set Up the Project Locally
-
-Clone the Repository
-
-Open your terminal and run the following command to clone the project: git clone https://github.com/DaniilBarilotti/phone-catalog.git
-
-Navigate to the Project Directory cd phone-catalog
-
-Install Dependencies npm install
-
-Start the Development Server npm start
-
-After starting the server, the project will be accessible via a local URL like http://localhost:3000 or http://localhost:8080 (depending on your setup).
-
-This setup will allow you to run and explore the Phone Catalog project locally, providing a comprehensive view of its features and code structure.
+The cart slice maintains quantities and total count; reducers persist cart state to localStorage. URL parameters make category views shareable. A useful next improvement is moving storage side effects out of reducers and validating saved data before loading it.
